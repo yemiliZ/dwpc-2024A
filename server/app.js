@@ -1,11 +1,18 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+// Preámbulo 
+// Ayuda a manejar errores http 
+import createError from "http-errors"; 
+// Ayuda a crear servidores web 
+import express from "express"; 
+// Nucleo de node, ayuda al manejo de las rutas 
+import path from "path"; 
+// Ayuda al manejo de cookies 
+import cookieParser from "cookie-parser"; 
+// Maneja el log de peticiones http 
+import logger from "morgan"; 
+ 
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+import indexRouter from './routes/index';
+import usersRouter from './routes/users';
 
 var app = express();
 
@@ -38,4 +45,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+// Exportando instancia de app 
+// usando js moderno 
+export default app;
