@@ -8,8 +8,7 @@ import path from "path";
 // Ayuda al manejo de cookies 
 import cookieParser from "cookie-parser"; 
 // Maneja el log de peticiones http 
-import logger from "morgan"; 
- 
+import logger from "morgan";
 
 import indexRouter from './routes/index';
 import usersRouter from './routes/users';
@@ -45,6 +44,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-// Exportando instancia de app 
-// usando js moderno 
-export default app;
+export default app; 
