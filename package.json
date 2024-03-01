@@ -5,6 +5,7 @@
   "scripts": {
     "start": "NODE_ENV=production node ./dist/bin/www",
     "dev": "NODE_ENV=developement babel-watch --watch ./server/views ./server/bin/www",
+    "devc": "NODE_ENV=developement webpack serve --config ./webpack.config.js --mode development",
     "dev-nodemon": "NODE_ENV=developement nodemon --exec babel-node ./server/bin/www",
     "clean": "rm -rf dist",
     "build": "npm run clean && babel ./server --out-dir dist --copy-files"
@@ -21,10 +22,16 @@
     "express": "~4.16.1",
     "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "pack": "^2.2.0",
+    "w": "^1.1.0",
+    "webpack-dev-middleware": "^7.0.0",
+    "webpack-dev-server": "^5.0.2",
+    "webpack-hot-middleware": "^2.26.1"
   },
   "devDependencies": {
     "babel-plugin-module-resolver": "^5.0.0",
+    "babel-preset-minify": "^0.5.2",
     "eslint-import-resolver-babel-module": "^5.3.2",
     "nodemon": "^3.1.0"
   }
