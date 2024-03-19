@@ -8,7 +8,7 @@ import app from '../app';
 // var debug = require('debug')('dwpcii-2023b:server');
 import debugLib from 'debug';
 import http from 'http';
-const debug = debugLib('dwpcii-2023b:server');
+const debug = debugLib('it-server');
 
 /**
  * Get port from environment and store in Express.
