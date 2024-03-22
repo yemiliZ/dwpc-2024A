@@ -8,7 +8,7 @@ import path from 'path';
 // Ayuda al manejo de cookies
 import cookieParser from 'cookie-parser';
 // Maneja el log de peticiones http
-import logger from 'morgan';
+import morgan from 'morgan';
 
 // importando las dependendencias
 import webpack from 'webpack';
@@ -18,6 +18,8 @@ import usersRouter from './routes/users';
 import indexRouter from './routes/index';
 // Importing webpack configuration
 import webpackConfig from '../webpack.dev.config';
+// Impornting winston logger
+import log from './config/winston';
 
 const app = express();
 
@@ -57,7 +59,7 @@ if (nodeEnviroment === 'development') {
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-app.use(logger('dev'));
+app.use(morgan('dev', { stream: log.stream }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -69,6 +71,7 @@ app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
+  log.info(`404 Pagina no encontrada 🤷‍♀️ ${req.method} ${req.originalUrl}`);
   next(createError(404));
 });
 
@@ -81,6 +84,7 @@ app.use((err, req, res, next) => {
 
   // render the error page
   res.status(err.status || 500);
+  log.error(`${err.status || 500} - ${err.message}`);
   res.render('error');
 });
 
