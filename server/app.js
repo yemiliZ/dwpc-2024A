@@ -20,6 +20,8 @@ import indexRouter from './routes/index';
 import webpackConfig from '../webpack.dev.config';
 // Impornting winston logger
 import log from './config/winston';
+// Importing template-engine
+import configTemplateEngine from './config/templateEngine';
 
 const app = express();
 
@@ -55,9 +57,9 @@ if (nodeEnviroment === 'development') {
 } else {
   console.log(' Ejecutando en modo producción 🧨');
 }
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+
+// Configuring the template engine
+configTemplateEngine(app);
 
 app.use(morgan('dev', { stream: log.stream }));
 app.use(express.json());
