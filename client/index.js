@@ -1,5 +1,14 @@
 // cargando los estilos
 /* eslint-disable no-console */
 import './styles/styles.css';
+/* eslint-disable */
+// Importando estilos de Materialize CSS
+import 'materialize-css/dist/css/materialize.css';
+// Importando scripts de Materialize
+import 'materialize-css/dist/js/materialize';
+/* eslint-enable */
 
-console.log('🎉 Client Server Workung powered by webpack🎉');
+// Inicializando Scripts de Materialize para interactividad
+M.AutoInit();
+
+console.log('Webpack Working Middleware!!! 📦');
