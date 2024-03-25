@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-// var debug = require('debug')('dwpcii-2023b:server');
+// var debug = require('debug')('dwpc-2024a:server');
 import debugLib from 'debug';
 import http from 'http';
 import app from '../app';

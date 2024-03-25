@@ -1,6 +1,6 @@
 // cargando los estilos
 /* eslint-disable no-console */
-import './styles/styles.css';
+import './styles/style.css';
 /* eslint-disable */
 // Importando estilos de Materialize CSS
 import 'materialize-css/dist/css/materialize.css';
